@@ -11,7 +11,7 @@ Uninformed (depth-first and breadth-first) and informed (best-first and A*) sear
 
 # Logic:
 
-Logical (procedural and declarative) techniques have been used to implement a solver and hint system for the [Easy As ABC](http://puzzlepicnic.com/genreid=8) puzzle using constraint programming. A rudimentary hint system for this puzzle has also been developed, which follows a similar chain of logic a person would usually follow when completing the puzzle. A brief evaluation comparing the procedural and declarative techniques is performed, as well as a critical discussion of the developed hint system.
+Logical (procedural and declarative) techniques have been used to implement a solver and hint system for the [Easy As ABC](http://puzzlepicnic.com/genre?id=8) puzzle using constraint programming. A rudimentary hint system for this puzzle has also been developed, which follows a similar chain of logic a person would usually follow when completing the puzzle. A brief evaluation comparing the procedural and declarative techniques is performed, as well as a critical discussion of the developed hint system.
 
 # Learning:
 
