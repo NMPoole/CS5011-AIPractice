@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Stuck Any Reason (Alert)</NAME>
+	<OUTCOME>True</OUTCOME>
+	<OUTCOME>False</OUTCOME>
+	<PROPERTY>position = (7460.7490234375, 5408.69140625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Is Ship Giant</NAME>
+	<OUTCOME>Yes</OUTCOME>
+	<OUTCOME>No</OUTCOME>
+	<PROPERTY>position = (7091.58642578125, 5161.38916015625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Weather</NAME>
+	<OUTCOME>Bad</OUTCOME>
+	<OUTCOME>Good</OUTCOME>
+	<PROPERTY>position = (7435.65869140625, 5157.80517578125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Weather Sensor Status</NAME>
+	<OUTCOME>Correct</OUTCOME>
+	<OUTCOME>Wrong</OUTCOME>
+	<PROPERTY>position = (7258.93212890625, 5158.9990234375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Tide</NAME>
+	<OUTCOME>Low</OUTCOME>
+	<OUTCOME>High</OUTCOME>
+	<PROPERTY>position = (7597.5458984375, 5157.1943359375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Canal Busy</NAME>
+	<OUTCOME>Yes</OUTCOME>
+	<OUTCOME>No</OUTCOME>
+	<PROPERTY>position = (7754.64404296875, 5157.80517578125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Radar Sensor Status</NAME>
+	<OUTCOME>Correct</OUTCOME>
+	<OUTCOME>Wrong</OUTCOME>
+	<PROPERTY>position = (7945.21728515625, 5159.03466796875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Stuck Due To Giant</NAME>
+	<OUTCOME>True</OUTCOME>
+	<OUTCOME>False</OUTCOME>
+	<PROPERTY>position = (7092.7822265625, 5265.32763671875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Stuck Due To Weather</NAME>
+	<OUTCOME>True</OUTCOME>
+	<OUTCOME>False</OUTCOME>
+	<PROPERTY>position = (7330.5263671875, 5265.32763671875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Stuck Due To Tide</NAME>
+	<OUTCOME>True</OUTCOME>
+	<OUTCOME>False</OUTCOME>
+	<PROPERTY>position = (7549.93408203125, 5265.13330078125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Stuck Due To Canal Busy</NAME>
+	<OUTCOME>True</OUTCOME>
+	<OUTCOME>False</OUTCOME>
+	<PROPERTY>position = (7754.64404296875, 5260.5498046875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Is Shopping Season</NAME>
+	<OUTCOME>Yes</OUTCOME>
+	<OUTCOME>No</OUTCOME>
+	<PROPERTY>position = (7755.3330078125, 5058.30859375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Traffic Detected</NAME>
+	<OUTCOME>High</OUTCOME>
+	<OUTCOME>Low</OUTCOME>
+	<PROPERTY>position = (7963.22314453125, 5258.3447265625)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Stuck Any Reason (Alert)</FOR>
+	<GIVEN>Stuck Due To Giant</GIVEN>
+	<GIVEN>Stuck Due To Weather</GIVEN>
+	<GIVEN>Stuck Due To Tide</GIVEN>
+	<GIVEN>Stuck Due To Canal Busy</GIVEN>
+	<TABLE>1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.001 0.999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Is Ship Giant</FOR>
+	<TABLE>0.75 0.25</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Weather</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Weather Sensor Status</FOR>
+	<TABLE>0.99 0.01</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Tide</FOR>
+	<TABLE>0.25 0.75</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Canal Busy</FOR>
+	<GIVEN>Is Shopping Season</GIVEN>
+	<TABLE>0.9 0.1 0.7 0.3</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Radar Sensor Status</FOR>
+	<TABLE>0.9 0.1</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Stuck Due To Giant</FOR>
+	<GIVEN>Is Ship Giant</GIVEN>
+	<TABLE>0.005 0.995 0.0 1.0</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Stuck Due To Weather</FOR>
+	<GIVEN>Weather</GIVEN>
+	<GIVEN>Weather Sensor Status</GIVEN>
+	<TABLE>0.007 0.993 0.01 0.99 0.004 0.996 0.002 0.998</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Stuck Due To Tide</FOR>
+	<GIVEN>Tide</GIVEN>
+	<TABLE>0.01 0.99 0.001 0.999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Stuck Due To Canal Busy</FOR>
+	<GIVEN>Canal Busy</GIVEN>
+	<TABLE>0.01 0.99 0.0 1.0</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Is Shopping Season</FOR>
+	<TABLE>0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Traffic Detected</FOR>
+	<GIVEN>Canal Busy</GIVEN>
+	<GIVEN>Radar Sensor Status</GIVEN>
+	<TABLE>1.0 0.0 0.5 0.5 0.0 1.0 0.5 0.5</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>

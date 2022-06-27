@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Simple Diagnostic Example</NAME>
+<PROPERTY>detailed = This is example 6.14, shown in Figure 6.3 of Poole and Mackworth, Artificial Intelligence: foundations of computational agents. Copyright Poole and Mackworth, 2009. This may be used under a Creative Commons Attribution-Noncommercial-Share Alike 2.5 Canada License http://creativecommons.org/licenses/by-nc-sa/2.5/ca/</PROPERTY>
+<PROPERTY>short = Influenza and Smoking Example of Poole and Mackworth, Artificial Intelligence.</PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>FlatTire</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7759.791015625, 5226.25439453125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>RoadIcy</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7386.54736328125, 5297.1708984375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>BatteryDead</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7758.9931640625, 5338.96240234375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>RadioBroken</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7900.52880859375, 5459.22021484375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>CarNotDriven</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7895.59423828125, 5130.87451171875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>NotStarting</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7637.7978515625, 5467.12548828125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>InAlaska</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7334.47119140625, 5136.8486328125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>NoFuel</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7545.40283203125, 5301.0087890625)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>FlatTire</FOR>
+	<GIVEN>CarNotDriven</GIVEN>
+	<TABLE>0.7 0.3 0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>RoadIcy</FOR>
+	<GIVEN>InAlaska</GIVEN>
+	<TABLE>0.8 0.2 0.3 0.7</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>BatteryDead</FOR>
+	<GIVEN>FlatTire</GIVEN>
+	<TABLE>0.4 0.6 0.001 0.999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>RadioBroken</FOR>
+	<GIVEN>BatteryDead</GIVEN>
+	<TABLE>0.6 0.4 0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>CarNotDriven</FOR>
+	<TABLE>0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>NotStarting</FOR>
+	<GIVEN>BatteryDead</GIVEN>
+	<GIVEN>NoFuel</GIVEN>
+	<TABLE>0.99 0.01 0.85 0.15 0.5 0.5 0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>InAlaska</FOR>
+	<TABLE>0.3 0.7</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>NoFuel</FOR>
+	<TABLE>0.15 0.85</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>

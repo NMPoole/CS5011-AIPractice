@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<BIF xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="0.3" xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+    <NETWORK>
+        <NAME>MEDICAL1_MEDICAL2_Merge.xml</NAME>
+        <VARIABLE TYPE="nature">
+            <NAME>Sun/UV</NAME>
+            <OUTCOME>T</OUTCOME>
+            <OUTCOME>F</OUTCOME>
+            <PROPERTY>position = (7487.2978515625, 5125.58984375)</PROPERTY>
+        </VARIABLE>
+        <VARIABLE TYPE="nature">
+            <NAME>Pollution</NAME>
+            <OUTCOME>High</OUTCOME>
+            <OUTCOME>Low</OUTCOME>
+            <PROPERTY>position = (7259.84521484375, 5128.861328125)</PROPERTY>
+        </VARIABLE>
+        <VARIABLE TYPE="nature">
+            <NAME>Dyspnoea</NAME>
+            <OUTCOME>T</OUTCOME>
+            <OUTCOME>F</OUTCOME>
+            <PROPERTY>position = (7601.18359375, 5398.41064453125)</PROPERTY>
+        </VARIABLE>
+        <VARIABLE TYPE="nature">
+            <NAME>Smoker</NAME>
+            <OUTCOME>T</OUTCOME>
+            <OUTCOME>F</OUTCOME>
+            <PROPERTY>position = (7461.0, 5100.0)</PROPERTY>
+        </VARIABLE>
+        <VARIABLE TYPE="nature">
+            <NAME>XRay</NAME>
+            <OUTCOME>Positive</OUTCOME>
+            <OUTCOME>Negative</OUTCOME>
+            <PROPERTY>position = (7224.0, 5298.0)</PROPERTY>
+        </VARIABLE>
+        <VARIABLE TYPE="nature">
+            <NAME>Asthma</NAME>
+            <OUTCOME>T</OUTCOME>
+            <OUTCOME>F</OUTCOME>
+            <PROPERTY>position = (7727.15478515625, 5275.1494140625)</PROPERTY>
+        </VARIABLE>
+        <VARIABLE TYPE="nature">
+            <NAME>Cancer</NAME>
+            <OUTCOME>T</OUTCOME>
+            <OUTCOME>F</OUTCOME>
+            <PROPERTY>position = (7353.0, 5201.0)</PROPERTY>
+        </VARIABLE>
+        <DEFINITION>
+            <FOR>Sun/UV</FOR>
+            <TABLE>0.25000 0.75000</TABLE>
+        </DEFINITION>
+        <DEFINITION>
+            <FOR>Pollution</FOR>
+            <TABLE>0.10000 0.90000</TABLE>
+        </DEFINITION>
+        <DEFINITION>
+            <FOR>Dyspnoea</FOR>
+            <GIVEN>Cancer</GIVEN>
+            <GIVEN>Asthma</GIVEN>
+            <TABLE>0.95000 0.05000 0.65000 0.35000 0.60000 0.40000 0.30000 0.70000</TABLE>
+        </DEFINITION>
+        <DEFINITION>
+            <FOR>Smoker</FOR>
+            <TABLE>0.30000 0.70000</TABLE>
+        </DEFINITION>
+        <DEFINITION>
+            <FOR>XRay</FOR>
+            <GIVEN>Cancer</GIVEN>
+            <TABLE>0.90000 0.10000 0.20000 0.80000</TABLE>
+        </DEFINITION>
+        <DEFINITION>
+            <FOR>Asthma</FOR>
+            <TABLE>0.08000 0.92000</TABLE>
+        </DEFINITION>
+        <DEFINITION>
+            <FOR>Cancer</FOR>
+            <GIVEN>Sun/UV</GIVEN>
+            <GIVEN>Pollution</GIVEN>
+            <GIVEN>Smoker</GIVEN>
+            <TABLE>0.08103 0.91897 0.08103 0.91897 0.05593 0.94407 0.05593 0.94407 0.04710 0.95290 0.04710 0.95290 0.02055 0.97945 0.02055 0.97945</TABLE>
+        </DEFINITION>
+    </NETWORK>
+</BIF>

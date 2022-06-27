@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Travel</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7534.0, 5097.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Fraud</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7402.0, 5184.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Foreign Purchases</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7524.0, 5306.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Internet Purchases</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7284.0, 5305.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Computer Related Purchase</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7176.0, 5180.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Own Computer</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7174.0, 5080.0)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Travel</FOR>
+	<TABLE>0.05 0.95</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Fraud</FOR>
+	<GIVEN>Travel</GIVEN>
+	<TABLE>0.01 0.99 0.002 0.998</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Foreign Purchases</FOR>
+	<GIVEN>Travel</GIVEN>
+	<GIVEN>Fraud</GIVEN>
+	<TABLE>0.9 0.1 0.9 0.1 0.1 0.9 0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Internet Purchases</FOR>
+	<GIVEN>Fraud</GIVEN>
+	<GIVEN>Computer Related Purchase</GIVEN>
+	<TABLE>0.02 0.98 0.001 0.999 0.01 0.99 1.0E-4 0.9999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Computer Related Purchase</FOR>
+	<GIVEN>Own Computer</GIVEN>
+	<TABLE>0.1 0.9 1.0E-4 0.9999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Own Computer</FOR>
+	<TABLE>0.9 0.1</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>

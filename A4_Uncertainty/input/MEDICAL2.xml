@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Pollution</NAME>
+	<OUTCOME>High</OUTCOME>
+	<OUTCOME>Low</OUTCOME>
+	<PROPERTY>position = (7259.84521484375, 5128.861328125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Cancer</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7403.423828125, 5264.3134765625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Asthma</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7727.15478515625, 5275.1494140625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Dyspnoea</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7601.18359375, 5398.41064453125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Sun/UV</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7487.2978515625, 5125.58984375)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Pollution</FOR>
+	<TABLE>0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Cancer</FOR>
+	<GIVEN>Pollution</GIVEN>
+	<GIVEN>Sun/UV</GIVEN>
+	<TABLE>0.04 0.96 0.02 0.98 0.01 0.99 0.001 0.999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Asthma</FOR>
+	<TABLE>0.08 0.92</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Dyspnoea</FOR>
+	<GIVEN>Cancer</GIVEN>
+	<GIVEN>Asthma</GIVEN>
+	<TABLE>0.95 0.05 0.65 0.35 0.6 0.4 0.3 0.7</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Sun/UV</FOR>
+	<TABLE>0.25 0.75</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>

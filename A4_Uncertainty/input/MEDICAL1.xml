@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Pollution</NAME>
+	<OUTCOME>High</OUTCOME>
+	<OUTCOME>Low</OUTCOME>
+	<PROPERTY>position = (7247.0, 5101.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Smoker</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7461.0, 5100.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Cancer</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7353.0, 5201.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>XRay</NAME>
+	<OUTCOME>Positive</OUTCOME>
+	<OUTCOME>Negative</OUTCOME>
+	<PROPERTY>position = (7224.0, 5298.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Dyspnoea</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7499.0, 5300.0)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Pollution</FOR>
+	<TABLE>0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Smoker</FOR>
+	<TABLE>0.3 0.7</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Cancer</FOR>
+	<GIVEN>Pollution</GIVEN>
+	<GIVEN>Smoker</GIVEN>
+	<TABLE>0.05 0.95 0.02 0.98 0.03 0.97 0.001 0.999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>XRay</FOR>
+	<GIVEN>Cancer</GIVEN>
+	<TABLE>0.9 0.1 0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Dyspnoea</FOR>
+	<GIVEN>Cancer</GIVEN>
+	<TABLE>0.65 0.35 0.3 0.7</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>
